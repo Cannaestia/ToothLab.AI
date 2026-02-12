@@ -1,0 +1,11 @@
+# robots.txt for ToothLab.Ai
+User-agent: *
+Allow: /
+
+# Disallow admin and member areas from search engines
+Disallow: /members
+Disallow: /checkout
+Disallow: /checkout/success
+
+# Sitemap location
+Sitemap: https://toothlab.ai/sitemap.xml
