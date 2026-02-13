@@ -113,7 +113,7 @@ export default function CADShowcase() {
             </div>
 
             <Link
-              to="/price-list"
+              to="/pricing"
               className="inline-block px-6 py-3 bg-gradient-to-r from-[#FDAB3D] to-[#FF3D57] text-white text-base font-bold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               CAD Design Pricing

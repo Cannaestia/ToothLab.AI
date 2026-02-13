@@ -132,8 +132,19 @@ export default function BlogPage() {
                     </span>
                   )}
 
-                  <h2 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-[#00CA72] transition-colors">
-                    {post.title}
+                  <h2 className="mb-3 group-hover:text-[#00CA72] transition-colors">
+                    {post.title.includes(':') ? (
+                      <>
+                        <span className="block text-2xl font-bold text-slate-900 group-hover:text-[#00CA72]">
+                          {post.title.split(':')[0]}:
+                        </span>
+                        <span className="block text-lg font-semibold text-slate-600 mt-1 group-hover:text-[#00CA72]">
+                          {post.title.split(':').slice(1).join(':').trim()}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="text-2xl font-bold text-slate-900 group-hover:text-[#00CA72]">{post.title}</span>
+                    )}
                   </h2>
 
                   <p className="text-slate-600 mb-4 line-clamp-3">

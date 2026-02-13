@@ -21,7 +21,7 @@ export default function FAQ() {
     },
     {
       question: 'What scanners/files do we support?',
-      answer: 'We support all major intraoral scanner formats including 3Shape, iTero, CEREC, Medit, and more. Our system accepts STL files and most proprietary scanner formats.',
+      answer: 'We support all major intraoral scanner formats including 3Shape, iTero, DS Core, Medit, and more. Our system accepts STL files and most proprietary scanner formats.',
     },
     {
       question: 'What happens if QC fails?',
@@ -33,11 +33,11 @@ export default function FAQ() {
     },
     {
       question: 'How do we submit cases?',
-      answer: 'Case submission is simple through our web-based platform. Upload your scan files, provide case details through our standardized intake form, and we take it from there. You\'ll receive updates throughout the process.',
+      answer: 'Case submission is simple through your IO Scanner. Upload your scan files, provide case details, and we take it from there. You\'ll receive updates throughout the process.',
     },
     {
       question: 'Pricing: per case or monthly?',
-      answer: 'We offer flexible pricing models to fit your practice volume. Contact us to discuss whether per-case pricing or a monthly subscription makes more sense for your clinic\'s needs.',
+      answer: 'We offer flexible pricing models to fit your practice volume. We offer per-case pricing for lab finishing and monthly subscription for monthly Scan QC.',
     },
   ];
 

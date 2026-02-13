@@ -145,7 +145,7 @@ export default function TrainingPage() {
                                 <li>• Submit workticket and save ticket number</li>
                               </ul>
                             </div>
-                            <p className="text-xs text-gray-600 italic ml-3">See detailed guide in: <Link to="/members" className="text-blue-600 hover:underline">Members Area - Seazona Workticket SOP</Link></p>
+                            <p className="text-xs text-gray-600 italic ml-3">See detailed guide in: <Link to="/members" className="text-blue-600 hover:underline">Members Portal - Seazona Workticket SOP</Link></p>
                           </div>
                         </div>
 

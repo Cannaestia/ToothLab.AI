@@ -56,7 +56,7 @@ export default function ScanQCTrainingPage() {
           className="inline-flex items-center gap-2 text-[#0073EA] hover:text-[#0063DA] font-semibold mb-8 transition-colors"
         >
           <ArrowLeft size={20} />
-          Back to Members Area
+          Back to Members Portal
         </Link>
 
         <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-12">

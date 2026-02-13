@@ -54,7 +54,7 @@ export default function SeazonaWorkticketPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#0073EA] text-white rounded-full font-semibold hover:bg-[#0063CA] transition-all shadow-lg hover:scale-105"
               >
                 <Eye className="w-5 h-5" />
-                Back to Members Area
+                Back to Members Portal
               </Link>
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm text-gray-700">
                 <Clock className="w-4 h-4" />

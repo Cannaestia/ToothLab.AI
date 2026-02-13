@@ -103,8 +103,19 @@ export default function BlogPostPage() {
             </span>
           )}
 
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-            {post.title}
+          <h1 className="mb-6 leading-tight">
+            {post.title.includes(':') ? (
+              <>
+                <span className="block text-4xl sm:text-5xl font-bold text-slate-900">
+                  {post.title.split(':')[0]}:
+                </span>
+                <span className="block text-2xl sm:text-3xl font-semibold text-slate-600 mt-2">
+                  {post.title.split(':').slice(1).join(':').trim()}
+                </span>
+              </>
+            ) : (
+              <span className="text-4xl sm:text-5xl font-bold text-slate-900">{post.title}</span>
+            )}
           </h1>
 
           <div className="flex flex-wrap items-center gap-6 text-slate-600 mb-8 pb-8 border-b border-slate-200">
@@ -129,8 +140,38 @@ export default function BlogPostPage() {
           )}
 
           <div className="prose prose-lg prose-slate max-w-none mb-12">
-            <div className="whitespace-pre-wrap text-slate-700 leading-relaxed">
-              {post.content}
+            <div className="text-slate-700 leading-relaxed">
+              {post.content.split('\n').map((line, i) => {
+                const imgMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+                if (imgMatch) {
+                  const altRaw = imgMatch[1];
+                  const src = imgMatch[2];
+                  const isRight = altRaw.endsWith('|right');
+                  const alt = isRight ? altRaw.replace(/\|right$/, '').trim() : altRaw;
+
+                  if (isRight) {
+                    return (
+                      <div key={i} className="float-right ml-6 mb-4 mt-1 w-48 sm:w-56 rounded-xl overflow-hidden shadow-lg">
+                        <img src={src} alt={alt} className="w-full h-auto" />
+                        {alt && (
+                          <p className="text-center text-xs text-slate-500 mt-1 italic px-2 pb-2">{alt}</p>
+                        )}
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <div key={i} className="my-8 rounded-xl overflow-hidden shadow-lg">
+                      <img src={src} alt={alt} className="w-full h-auto" />
+                      {alt && (
+                        <p className="text-center text-sm text-slate-500 mt-2 italic">{alt}</p>
+                      )}
+                    </div>
+                  );
+                }
+                if (line.trim() === '') return <br key={i} />;
+                return <p key={i} className="mb-4">{line}</p>;
+              })}
             </div>
           </div>
 
@@ -158,7 +199,7 @@ export default function BlogPostPage() {
             Ready to Transform Your Dental Practice?
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Discover how ToothLab can help you deliver better outcomes
+            Discover how ToothLab.Ai can help you deliver better outcomes
           </p>
           <Link
             to="/get-started"

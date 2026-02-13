@@ -17,21 +17,20 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-1">
-            {!isHome && (
-              <Link to="/" className="px-4 py-2 text-gray-700 hover:text-[#FF3D57] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
-                Home
-              </Link>
-            )}
             <Link to="/pricing" className="px-4 py-2 text-gray-700 hover:text-[#0073EA] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
               Pricing
             </Link>
             <Link to="/blog" className="px-4 py-2 text-gray-700 hover:text-[#00CA72] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
               Blog
             </Link>
-            {isHome && (
+            {isHome ? (
               <a href="#faq" className="px-4 py-2 text-gray-700 hover:text-[#00CA72] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
                 FAQ
               </a>
+            ) : (
+              <Link to="/#faq" className="px-4 py-2 text-gray-700 hover:text-[#00CA72] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
+                FAQ
+              </Link>
             )}
             <Link to="/about" className="px-4 py-2 text-gray-700 hover:text-[#FDAB3D] transition-colors duration-200 font-medium text-sm rounded-lg hover:bg-gray-50">
               About
@@ -57,15 +56,6 @@ export default function Navigation() {
         mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-4 py-4 space-y-2">
-          {!isHome && (
-            <Link
-              to="/"
-              className="block text-gray-700 hover:text-[#FF3D57] hover:bg-gray-50 py-2.5 px-4 rounded-lg transition-all duration-200"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-          )}
           <Link
             to="/pricing"
             className="block text-gray-700 hover:text-[#0073EA] hover:bg-gray-50 py-2.5 px-4 rounded-lg transition-all duration-200"
@@ -80,7 +70,7 @@ export default function Navigation() {
           >
             Blog
           </Link>
-          {isHome && (
+          {isHome ? (
             <a
               href="#faq"
               className="block text-gray-700 hover:text-[#00CA72] hover:bg-gray-50 py-2.5 px-4 rounded-lg transition-all duration-200"
@@ -88,6 +78,14 @@ export default function Navigation() {
             >
               FAQ
             </a>
+          ) : (
+            <Link
+              to="/#faq"
+              className="block text-gray-700 hover:text-[#00CA72] hover:bg-gray-50 py-2.5 px-4 rounded-lg transition-all duration-200"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              FAQ
+            </Link>
           )}
           <Link
             to="/about"

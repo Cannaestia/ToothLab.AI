@@ -328,7 +328,7 @@ export default function DemoForm() {
                 disabled={loading}
                 className="w-full py-5 bg-gradient-to-r from-[#FF3D57] to-[#FDAB3D] text-white text-lg font-bold rounded-full hover:scale-105 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                {loading ? 'Submitting...' : 'Start free trial'}
+                {loading ? 'Submitting...' : 'Contact Us'}
                 <Send size={20} />
               </button>
 

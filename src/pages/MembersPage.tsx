@@ -88,7 +88,7 @@ export default function MembersPage() {
                 type="submit"
                 className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
               >
-                Access Members Area
+                Access Members Portal
               </button>
             </form>
           </div>
@@ -103,7 +103,7 @@ export default function MembersPage() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900">
-            Members Area
+            Members Portal
           </h1>
           <button
             onClick={handleLogout}
@@ -116,7 +116,7 @@ export default function MembersPage() {
 
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Welcome to the ToothLab Members Portal
+            Welcome to the ToothLab.Ai Members Portal
           </h2>
           <p className="text-gray-600 mb-6">
             This is your exclusive members-only area. Here you can access special resources,
