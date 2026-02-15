@@ -46,7 +46,7 @@ export default function BlogPage() {
     }
   };
 
-  const categories = ['all', ...Array.from(new Set(posts.map(p => p.category).filter(Boolean)))];
+  const categories = ['all', ...Array.from(new Set(posts.map(p => p.category).filter((c): c is string => Boolean(c))))];
 
   const filteredPosts = selectedCategory === 'all'
     ? posts
